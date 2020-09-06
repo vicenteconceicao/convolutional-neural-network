@@ -10,17 +10,18 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
 
-test_path = "train.txt"
+train_path = "train.txt"
 data_path = "./data/"
-aug_test_path = "aug_train.txt"
+aug_train_path = "aug_train.txt"
 data_aug_path = "./data_augmented/"
 
 
-new_test_file = open(aug_test_path, 'w+')
+new_test_file = open(aug_train_path, 'w+')
 
 # loading images
-with open(test_path, "r") as rfile:
+with open(train_path, "r") as rfile:
     for line in rfile:
+        print(line)
         file_name, file_class = line.split(" ")
         img = load_img(data_path+file_name)
         # Saving image to a new directory
